@@ -8,7 +8,7 @@ vueObject = new Vue({
     },
     methods: {
         getQuotes: function () {
-            this.$http.get('http://192.168.99.100:8000/').then(function (data) {
+            this.$http.get('http://backend:8000/').then(function (data) {
                 this.quotes = data.body;
                 if (data.body.length > 0) {
                     this.quote = data.body[0];
