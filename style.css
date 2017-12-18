@@ -4,13 +4,19 @@
 html, body {
     height: 100%;
     min-height: 100%;
-    position: relative;
     background: #341634;
     color: white;
     font-family: 'Nanum Pen Script', cursive;
 }
-.controller {
-    width: 50%;
+#wrapper {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+#controller {
+    min-width: 1200px;
     transform: translate(-50%, -50%);
     position: absolute;
     top: 50%;
@@ -18,15 +24,17 @@ html, body {
     padding: 50px;
     overflow: auto;
     text-align: center;
+    display: block;
 }
-.controller h1 {
+#controller h1 {
     text-align: center;
     margin-bottom: 50px;
     font-size: 50px;
 }
 .quote {
-    font-size: 80px;
+    font-size: 70px;
     text-align: center;
+    transition: all 500ms;
 }
 .said-by {
     font-size: 40px;

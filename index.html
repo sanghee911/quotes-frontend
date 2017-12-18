@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="controller" id="vue-app">
-    <h1>내가 좋아하는 명언 모음</h1>
-    <p class="quote">{{ quote.quote }}</p>
-    <p class="said-by">- {{ quote.said_by }} -</p>
+<div class="container">
+    <div class="row" id="vue-app">
+        <div class="col-sm-12" id="wrapper">
+            <div id="controller">
+                <h1>내가 좋아하는 명언 모음</h1>
+                <p class="quote">"{{ quote.quote }}"</p>
+                <p class="said-by">- {{ quote.said_by }} -</p>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

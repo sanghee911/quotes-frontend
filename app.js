@@ -8,8 +8,9 @@ vueObject = new Vue({
     },
     methods: {
         getQuotes: function () {
-            this.$http.get('http://backend:8000/').then(function (data) {
+            this.$http.get('http://192.168.99.100:8000/').then(function (data) {
                 this.quotes = data.body;
+                console.log('getQuotes: ' + this.quotes.length);
                 if (data.body.length > 0) {
                     this.quote = data.body[0];
                 }
@@ -18,21 +19,23 @@ vueObject = new Vue({
         loopQuotes: function () {
             let counter = 0;
             window.setInterval(() => {
-                let listLength = this.quotes.length;
-                let divided = (counter % listLength)
-                this.quote = this.quotes[divided];
-                if(counter >= listLength) {
-                    counter = 0;
-                } else {
-                    counter++;
+                if (this.quotes.length > 0) {
+                    let listLength = this.quotes.length;
+                    let divided = (counter % listLength);
+                    this.quote = this.quotes[divided];
+                    if(counter >= listLength) {
+                        counter = 0;
+                    } else {
+                        counter++;
+                    }
                 }
-            },10000);
+            }, 5000);
         }
     },
-    beforeMount() {
+    created() {
         this.getQuotes();
     },
-    mounted() {
+    beforeMount() {
         this.loopQuotes();
-    },
+    }
 });
